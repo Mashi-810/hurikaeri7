@@ -1,0 +1,19 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>かたちづくり ふりかえり</title>
+<style>body{font-family:-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;background:#f6fbff;margin:0;color:#333}main{max-width:850px;margin:auto;padding:20px}h1{text-align:center;font-size:38px}.c{background:white;padding:22px;border-radius:22px;margin:15px 0;box-shadow:0 3px 15px #0001}h2{font-size:28px}.b{display:grid;grid-template-columns:1fr 1fr;gap:14px}button{font:inherit;font-size:25px;font-weight:bold;background:white;border:3px solid #d8e6ee;border-radius:18px;padding:18px;min-height:80px}.r{font-size:32px;font-weight:bold;line-height:1.8;background:#fffbea;padding:22px;border-radius:18px}.a{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}@media(max-width:600px){.b{grid-template-columns:1fr}h1{font-size:32px}}</style></head>
+<body><main><h1>🔷 かたちづくり<br>ふりかえり</h1>
+<section id="a" class="c"><h2>① えらんでね</h2><div class="b">
+<button data-k="w">💡 わかったこと</button><button data-k="k">👀 きづいたこと</button><button data-k="d">😊 できたこと</button><button data-k="m">🌱 もっと しりたいこと</button></div></section>
+<section id="b" class="c" hidden><h2 id="q"></h2><div id="cs" class="b"></div></section>
+<section id="c" class="c" hidden><h2>✏️ この ぶんを のーとに うつそう！</h2><div id="r" class="r"></div><div class="a"><button id="sp">🔊 よんでみる</button><button id="ag">🔄 べつの ぶん</button><button id="bk">↩ えらびなおす</button><button id="rs">🏠 はじめから</button></div></section>
+<script>
+const D={
+w:["なにが わかった？",[["いろいたを ずらすと かたちが かわる","いろいたを ずらすと、かたちが かわることが わかりました。"],["いろいたを まわすと かたちが かわる","いろいたを まわすと、かたちが かわることが わかりました。"],["いろいたを うらがえすと かたちが かわる","いろいたを うらがえすと、かたちが かわることが わかりました。"],["ぼうを とると ちがう かたちになる","ぼうを とると、ちがう かたちに かえることが できると わかりました。"]]],
+k:["なにに きづいた？",[["いろいたを まわすと むきが かわる","いろいたを まわすと、むきが かわることに きづきました。"],["おなじ いろいたでも ちがう かたちになる","おなじ いろいたでも、うごかしかたを かえると ちがう かたちになることに きづきました。"],["いろいたを うらがえすと みえる いろが かわる","いろいたを うらがえすと、みえる いろが かわることに きづきました。"],["ずらす・まわす・うらがえす うごかしかたが ある","ずらす、まわす、うらがえすなどの うごかしかたが あることに きづきました。"]]],
+d:["なにが できた？",[["いろいたを ずらして ちがう かたちを つくった","いろいたを ずらして、ちがう かたちを つくることが できました。"],["いろいたを まわして ちがう かたちを つくった","いろいたを まわして、ちがう かたちを つくることが できました。"],["いろいたを うらがえして ちがう かたちを つくった","いろいたを うらがえして、ちがう かたちを つくることが できました。"],["ぼうを とって ちがう かたちに かえた","ぼうを とって、ちがう かたちに かえることが できました。"],["いろいたや ぼうを うごかして かたちを つくった","いろいたや ぼうを うごかして、じぶんで かたちを つくることが できました。"]]],
+m:["もっと なにを しりたい？",[["いろいたを うごかして ほかの かたちも つくりたい","いろいたを うごかして、もっと いろいろな かたちを つくってみたいです。"],["ほかに どんな うごかしかたが あるか しりたい","いろいたには、ほかに どんな うごかしかたが あるのか しりたいです。"],["ぼうを うごかして ほかの かたちも つくりたい","ぼうを とったり うごかしたりして、もっと いろいろな かたちを つくってみたいです。"],["ひとつの かたちから いくつ かたちを つくれるか しりたい","ひとつの かたちから、いくつ ちがう かたちを つくれるのか しりたいです。"]]]
+};
+let key="";const A=document.getElementById("a"),B=document.getElementById("b"),C=document.getElementById("c"),Q=document.getElementById("q"),CS=document.getElementById("cs"),R=document.getElementById("r");
+document.querySelectorAll("#a button").forEach(x=>x.onclick=()=>{key=x.dataset.k;Q.textContent=D[key][0];CS.innerHTML="";D[key][1].forEach(z=>{let y=document.createElement("button");y.textContent=z[0];y.onclick=()=>{R.textContent=z[1];B.hidden=true;C.hidden=false};CS.appendChild(y)});A.hidden=true;B.hidden=false});
+sp.onclick=()=>{let u=new SpeechSynthesisUtterance(R.textContent);u.lang="ja-JP";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)};
+ag.onclick=()=>{C.hidden=true;B.hidden=false};bk.onclick=()=>{C.hidden=true;A.hidden=false};rs.onclick=()=>{C.hidden=true;B.hidden=true;A.hidden=false};
+</script></main></body></html>
